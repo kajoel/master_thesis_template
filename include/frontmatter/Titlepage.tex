@@ -1,0 +1,145 @@
+% CREATED BY MAGNUS GUSTAVER, 2020
+
+\ifx\ThesisType\undefined
+Undefined Thesis type in settings.tex
+\else
+  \if\ThesisType M
+    \else
+    \if\ThesisType B
+    \else
+    Define \textbackslash ThesisType as M for master's thesis or B for bachelor thesis in settings.tex
+    \fi
+  \fi
+\fi
+
+% COVER PAGE
+\begin{titlepage}
+\newgeometry{top=3cm, bottom=1cm,
+			left=2.25 cm, right=2.25cm}	% Temporarily change margins		
+			
+%Header Front Page
+\ifx\ThesisType\undefined
+\else
+    \if\ThesisType M
+    \vtop{
+        \null\vspace{-25mm}
+        \centerline{\includegraphics[width=1.18\textwidth]{figure/auxiliary/GrayHeaderPattern.jpg}}
+        \vspace{-2.3cm}
+        \hbox{\hspace{0mm}\includegraphics[height=18mm]{figure/auxiliary/AvancezChalmersU_white_right.eps}}
+        \centerline{\textcolor{headerBrown}{\rule{1.18\textwidth}{4pt}}}
+        \vspace{\paperheight}\vspace{-85mm}
+        \centerline{\textcolor{thesisHeaderColor}{\rule{1.1\textwidth}{0.8pt}}} % Rule after Department
+        \vspace{-\paperheight}\vspace{85mm}
+    }
+    \fi
+    \if\ThesisType B
+    \vtop{
+        \null\vspace{-25mm}
+        \centerline{\includegraphics[width=1.18\textwidth,height=80pt]{figure/auxiliary/GreenHeaderPattern.jpg}}
+        \vspace{-2.3cm}
+        \hbox{\hspace{0mm}\includegraphics[height=18mm]{figure/auxiliary/AvancezChalmers_white_right.eps}}
+        \centerline{\textcolor{headerBrown}{\rule{1.18\textwidth}{4pt}}}
+        \vspace{\paperheight}\vspace{-85mm}
+        \centerline{\textcolor{thesisHeaderColor}{\rule{1.1\textwidth}{0.8pt}}} % Rule after Department
+        \vspace{-\paperheight}\vspace{85mm}
+    }
+    \fi
+\fi
+
+% Cover picture (replace with your own or delete)		
+\begin{figure}[H]
+\centering
+\vspace{1cm}	% Adjust vertical spacing here
+\includegraphics[width=0.9\linewidth]{figure/Wind.png}
+\end{figure}
+
+% Cover text
+\mbox{}
+\vfill
+\renewcommand{\familydefault}{\sfdefault} \normalfont % Set cover page font
+\textbf{{\Huge 	A Chalmers University of Technology 	\\[0.2cm] 
+				Master's thesis template for \LaTeX}} 	\\[0.5cm]
+{\Large A Subtitle that can be Very Much Longer if Necessary}\\[0.5cm]
+Master's thesis in Master Programme Name \setlength{\parskip}{1cm}
+
+\noindent
+{\Large MAGNUS GUSTAVER} \setlength{\parskip}{1.5cm}
+
+\noindent
+\textcolor{thesisHeaderColor}{\small\textbf{DEPARTMENT OF SOME SUBJECT OR TECHNOLOGY}}
+\setlength{\parskip}{1mm}
+
+\textsc{Chalmers University of Technology} \\
+{\small Gothenburg, Sweden \the\year \\
+\href{www.chalmers.se}{www.chalmers.se}}\vspace{1.7cm}
+
+\renewcommand{\familydefault}{\rmdefault} \normalfont % Reset standard font
+\end{titlepage}
+
+
+% BACK OF COVER PAGE (BLANK PAGE)
+\newpage
+\restoregeometry
+\thispagestyle{empty}
+\mbox{}
+
+
+% TITLE PAGE
+\newpage
+\thispagestyle{empty}
+\begin{center}
+	\textsc{\large Master's thesis \the\year}\\[4cm]
+	\textbf{\Large An Informative Headline describing\\ the Content of the Report} \\[1cm]
+	{\large A Subtitle that can be Very Much Longer if Necessary}\\[1cm]
+	{\large NAME FAMILYNAME}
+	
+	\vfill	
+	% Logotype on titlepage	
+	\begin{figure}[H]
+	\centering
+	% Remove this figure to remove the titlepage logotype
+	\if\ThesisType M
+    \includegraphics[width=0.2\pdfpagewidth]{figure/auxiliary/AvancezChalmersU_black_centered.eps} \\
+    \fi
+    \if\ThesisType B
+    \includegraphics[width=0.2\pdfpagewidth]{figure/auxiliary/AvancezChalmers_black_centered.eps} \\
+    \fi
+	%\includegraphics[width=0.2\pdfpagewidth]{figure/auxiliary/AvancezChalmersU_black_centered.eps} \\
+	\end{figure}	\vspace{5mm}	
+	
+	Department of Some Subject or Technology \\
+	\emph{Division of Division name}\\
+	Name of research group (if applicable)\\
+	\textsc{Chalmers University of Technology} \\
+	Gothenburg, Sweden \the\year \\
+\end{center}
+
+
+% IMPRINT PAGE (BACK OF TITLE PAGE)
+\newpage
+\thispagestyle{plain}
+\vspace*{4.5cm}
+An Informative Headline describing the Content of the Report\\
+A Subtitle that can be Very Much Longer if Necessary\\
+NAME FAMILYNAME \setlength{\parskip}{1cm}
+
+\copyright ~ NAME FAMILYNAME, \the\year. \setlength{\parskip}{1cm}
+
+Supervisor: Name, Company or Department\\
+Examiner: Name, Department \setlength{\parskip}{1cm}
+
+Master's Thesis \the\year\\	
+Department of Some Subject or Technology\\
+Division of Division name\\
+Name of research group (if applicable)\\
+Chalmers University of Technology\\
+SE-412 96 Gothenburg\\
+Telephone +46 31 772 1000 \setlength{\parskip}{0.5cm}
+
+\vfill
+% Caption for cover page figure if used, possibly with reference to further information in the report
+Cover: Wind visualization constructed in Matlab showing a surface of constant wind speed along with streamlines of the flow. \setlength{\parskip}{0.5cm}
+
+Typeset in \LaTeX \tagtemp\\
+Printed by Chalmers Reproservice\\
+Gothenburg, Sweden \the\year
