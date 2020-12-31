@@ -4,9 +4,11 @@
 \newcommand{\thesisMonth}{\monthname}
 \newcommand{\thesisYear}{\the\year}
 
+% LAYOUT
+\newcommand{\thesisLayout}{2} % One-sided (1) or two-sided (2) layout
+
 % Controls e.g. todonotes
 \newcommand{\thesisStatus}{d} % d for draft, f for final
-
 
 % TITLE (cover page & title page, imprint page; possibly different line breaks)
 \newcommand{\thesisTitle}{An Informative Headline describing \\[0.2cm] the Content of the Report}
@@ -46,9 +48,3 @@
 \newcommand{\thesisCoverFigure}{frontmatter/Wind.png}
 % Caption for cover page figure if used, possibly with reference to further information in the report:
 \newcommand{\thesisCoverFigureCaption}{Wind visualization constructed in Matlab showing a surface of constant wind speed along with streamlines of the flow.}
-
-% LAYOUT
-\newcommand{\thesisLayout}{2} % One-sided (1) or two-sided (2) layout
-\newcommand{\thesisFootnoteStyle}{n} % 'n' for numbers, 's' for symbols
-% if symbols is used, one may need to modify the
-% code in settings/layout.text

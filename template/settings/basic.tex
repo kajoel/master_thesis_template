@@ -164,6 +164,8 @@
 \renewcommand*\footnoterule{\rule[2pt]{\textwidth}{0.5pt}}
 
 % footnote symbols or numbers
+\newcommand{\thesisFootnoteStyle}{n} % 'n' for numbers, 's' for symbols
+
 \if\thesisFootnoteStyle n
     \renewcommand{\thefootnote}{\arabic{footnote}}
 \fi
@@ -185,47 +187,13 @@
 \fi
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%TITLE AND TOC LAYOUT
-\usepackage{titlesec}
-\usepackage{titletoc}
-\usepackage[title]{appendix}
-
-% Define the number of section levels to be included in toc and numbered
-\setcounter{tocdepth}{3}
-\setcounter{secnumdepth}{3}
-
-% Chapter styles (NOTE: only the last one is used)
-\titleformat{\chapter}[display]
-  {\Huge\bfseries\filcenter}
-  {{\fontsize{50pt}{1em}\vspace{-4.2ex}\selectfont \textnormal{\thechapter}}}{1ex}{}[]
-
-\titleformat{\chapter}[hang]{\fontsize{30}{10}\selectfont}
-{{\fontsize{30pt}{1em}\vspace{-5.2ex}\selectfont \textnormal{\thechapter. \hspace{1pt}}}}
-{.5ex}{}[\rule{\textwidth}{0.3pt}]
-
-% Handle #blank pages at chapter break
-\if\thesisLayout 1
-    \renewcommand{\cleardoublepage}{\clearpage}
-\fi
-
-% Name of chapters
-% \addto\captionsenglish{\renewcommand{\abstractname}{}}
-\addto{\captionsenglish}{\renewcommand{\contentsname}{Table of Contents}}
-% \addto\captionsenglish{\renewcommand{\appendixname}{}}
-
-% \bibname seems to be reset at \begin{document} (workaround in main)
-\newcommand{\thesisBibName}{References}
-\addto{\captionsenglish}{\renewcommand{\bibname}{\thesisBibName}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BLANK LINE AND SPACING
 \usepackage{parskip}				% Enables vertical spaces correctly
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{\baselineskip}
 
-% Titlespacing
-\titlespacing{\chapter}{0pt}{0pt}{\parskip}
+% Title spacing
 
 % Defaults:
 %\titlespacing*{\chapter} {0pt}{50pt}{40pt}
@@ -241,6 +209,46 @@
 \setlength{\abovedisplayshortskip}{0pt}
 
 \raggedbottom % does not fill the entire page if not necessary
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TITLE AND TOC LAYOUT
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage[title]{appendix}
+
+% Define the number of section levels to be included in toc and numbered
+\setcounter{tocdepth}{3}
+\setcounter{secnumdepth}{3}
+
+% Chapter styles (NOTE: only the last one is used)
+\newcommand*{\thesisChapterStyle}{1} % 0 for default
+
+\ifnum\thesisChapterStyle=1
+    \titleformat{\chapter}[hang]{\fontsize{30}{10}\selectfont}
+    {{\fontsize{30pt}{1em}\vspace{-5.2ex}\selectfont \textnormal{\thechapter. \hspace{1pt}}}}
+    {.5ex}{}[\rule{\textwidth}{0.3pt}]
+    \titlespacing{\chapter}{0pt}{0pt}{\parskip}
+\fi
+
+\ifnum\thesisChapterStyle=2
+    \titleformat{\chapter}[display]
+    {\Huge\bfseries\filcenter}
+    {{\fontsize{50pt}{1em}\vspace{-4.2ex}\selectfont \textnormal{\thechapter}}}{1ex}{}[]
+\fi
+
+% Handle number of blank pages at chapter break
+\if\thesisLayout 1
+    \renewcommand{\cleardoublepage}{\clearpage}
+\fi
+
+% Name of chapters
+% \addto\captionsenglish{\renewcommand{\abstractname}{}}
+\addto{\captionsenglish}{\renewcommand{\contentsname}{Table of Contents}}
+% \addto\captionsenglish{\renewcommand{\appendixname}{}}
+
+% \bibname seems to be reset at \begin{document} (workaround in main)
+\newcommand{\thesisBibName}{References}
+\addto{\captionsenglish}{\renewcommand{\bibname}{\thesisBibName}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % COVER PAGE BACKGROUND
@@ -272,7 +280,7 @@
 \makeatother
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% OTHERS
+% OTHER
 \usepackage{csquotes}               % Quotations, using the command
 \usepackage{lipsum}                 % Generating Lorem Ipsum
 \usepackage{enumitem}               % Provides control over lists
