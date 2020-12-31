@@ -1,0 +1,98 @@
+% COVER PAGE
+{ % make parskip changes local
+\ifx\thesisType\undefined
+Undefined Thesis type in settings.tex
+\else
+  \if\thesisType M
+    \else
+    \if\thesisType B
+    \else
+    Define \textbackslash ThesisType as M for master's thesis or B for bachelor thesis in project\_information.tex
+    \fi
+  \fi
+\fi
+
+% COVER PAGE
+\begin{titlepage}
+\newgeometry{top=3cm, bottom=1cm,
+			left=2.25 cm, right=2.25cm}	% Temporarily change margins
+
+%Header Front Page
+\ifx\thesisType\undefined
+\else
+    \if\thesisType M
+    \vtop{
+        \null\vspace{-25mm}
+        \centerline{\includegraphics[width=1.18\textwidth]{template/figures/GrayHeaderPattern.jpg}}
+        \vspace{-2.3cm}
+        \hbox{\hspace{0mm}\includegraphics[height=18mm]{template/figures/AvancezChalmersU_white_right.eps}}
+        \centerline{\textcolor{headerBrown}{\rule{1.18\textwidth}{4pt}}}
+        \vspace{\paperheight}\vspace{-85mm}
+        \centerline{\textcolor{thesisHeaderColor}{\rule{1.1\textwidth}{0.8pt}}} % Rule after Department
+        \vspace{-\paperheight}\vspace{85mm}
+    }
+    \fi
+    \if\thesisType B
+    \vtop{
+        \null\vspace{-25mm}
+        \centerline{\includegraphics[width=1.18\textwidth,height=80pt]{template/figures/GreenHeaderPattern.jpg}}
+        \vspace{-2.3cm}
+        \hbox{\hspace{0mm}\includegraphics[height=18mm]{template/figures/AvancezChalmers_white_right.eps}}
+        \centerline{\textcolor{headerBrown}{\rule{1.18\textwidth}{4pt}}}
+        \vspace{\paperheight}\vspace{-85mm}
+        \centerline{\textcolor{thesisHeaderColor}{\rule{1.1\textwidth}{0.8pt}}} % Rule after Department
+        \vspace{-\paperheight}\vspace{85mm}
+    }
+    \fi
+\fi
+
+% Cover picture
+\ifx\thesisCoverFigure\undefined
+\else
+    \begin{figure}[H]
+    \centering
+    \vspace{1cm}	% Adjust vertical spacing here
+    \includegraphics[width=0.9\linewidth]{\thesisCoverFigure}
+    \end{figure}
+\fi
+
+% Cover text
+\mbox{}
+\vfill
+\renewcommand{\familydefault}{\sfdefault} \normalfont % Set cover page font
+\textbf{{\Huge 	\thesisTitle}} 	\\[0.5cm]
+{\Large \thesisSubtitle}\\[0.4cm]
+\if\thesisType M
+    Master's thesis in
+\else
+    Kandidatarbete i
+\fi
+\thesisMasterProgramme \setlength{\parskip}{1cm}
+
+
+\noindent
+{\Large \MakeUppercase{\thesisAuthor}}
+\setlength{\parskip}{1.5cm} % NOTE: 1cm (1.5cm) with (without) division (below department)
+\ifx\thesisCoverFigure\undefined
+    \vspace{6cm}  % increase space if there is no figure
+\fi
+
+\noindent
+\textcolor{thesisHeaderColor}{\small\textbf{\MakeUppercase{\thesisDepartment}}}
+\setlength{\parskip}{1mm}
+
+\textsc{\thesisUniversity} \\
+{\small \thesisLocation\ \thesisYear \\
+\href{\thesisUniversityURL}{\textcolor{black}{\thesisUniversityURL}}}\vspace{1.7cm}
+
+\renewcommand{\familydefault}{\rmdefault} \normalfont % Reset standard font
+\end{titlepage}
+\restoregeometry
+
+% BACK OF COVER PAGE (BLANK PAGE)
+\if\thesisLayout 2
+\newpage
+\thispagestyle{empty}
+\mbox{}
+\fi
+}

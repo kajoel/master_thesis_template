@@ -1,12 +1,24 @@
-% CREATED BY MAGNUS GUSTAVER, 2020
+% The following should be present above the English abstract in a Bachelor thesis written in Swedish (in which case there should also be an abstract in Swedish):
+% [Title in English]\\
+% [Subtitle in English]\\
+% \thesisAuthor\\
+% [Name of department in English]\\
+% Chalmers University of Technology \setlength{\parskip}{0.5cm}
+
 \thispagestyle{plain}			% Suppress header
-\section*{Acknowledgements}
+\section*{\abstractname}
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-\vspace{1.5cm}
-\hfill
-Name Familyname, Gothenburg, Month Year
+\vfill
+\if\thesisType M
+    \textbf{Keywords:}
+\else
+    \textbf{Nyckelord:}
+\fi
+lorem, ipsum, dolor, sit, amet, consectetur, adipisicing, elit, sed, do.
 
+\if\thesisLayout 2
 \newpage				% Create empty back of side
 \thispagestyle{empty}
 \mbox{}
+\fi

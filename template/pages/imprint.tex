@@ -1,0 +1,74 @@
+% IMPRINT PAGE (BACK OF TITLE PAGE)
+{ % make parskip changes local
+\newpage
+\thispagestyle{empty}
+\vspace*{4.5cm}
+\thesisImprintTitle\\
+\thesisImprintSubtitle\\
+\thesisAuthor \setlength{\parskip}{1cm}
+
+\copyright ~ \thesisAuthor, \thesisYear. \setlength{\parskip}{1cm}
+
+\if\thesisType M
+    Supervisor:
+\else
+    Handledare:
+\fi
+\thesisSupervisor\\
+\if\thesisType M
+    Examiner:
+\else
+    Examinator:
+\fi
+\thesisExaminer \setlength{\parskip}{1cm}
+
+\if\thesisType M
+    Master's Thesis
+\else
+    Kandidatarbete
+\fi
+\thesisYear\\
+\thesisDepartment\\
+\thesisDivision\\
+\ifx\thesisGroup\undefined
+\else
+\thesisGroup\\
+\fi
+\thesisUniversity\\
+\thesisImprintLocation\\
+\if\thesisType M
+    Telephone:
+\else
+    Telefon:
+\fi
+\thesisUniversityTel \setlength{\parskip}{0.5cm}
+
+\vfill
+\ifx\thesisCoverFigure\undefined
+\else
+    \if\thesisType M
+        Cover:
+    \else
+        Omslag:
+    \fi
+    \thesisCoverFigureCaption
+    \setlength{\parskip}{0.5cm}
+\fi
+
+\if\thesisType M
+    Typeset in
+\else
+    Typsatt i
+\fi
+\LaTeX\\
+\ifx\thesisPrintedBy\undefined
+\else
+    \if\thesisType M
+        Printed by
+    \else
+        Tryckt av
+    \fi
+    \thesisPrintedBy\\
+\fi
+\thesisLocation\ \thesisYear
+}

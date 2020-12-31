@@ -1,0 +1,54 @@
+% GENERAL
+\newcommand{\thesisType}{M} % M - master, B - bachelor
+\newcommand{\thesisAuthor}{Name Familyname}
+\newcommand{\thesisMonth}{\monthname}
+\newcommand{\thesisYear}{\the\year}
+
+% Controls e.g. todonotes
+\newcommand{\thesisStatus}{d} % d for draft, f for final
+
+
+% TITLE (cover page & title page, imprint page; possibly different line breaks)
+\newcommand{\thesisTitle}{An Informative Headline describing \\[0.2cm] the Content of the Report}
+\newcommand{\thesisImprintTitle}{An Informative Headline describing the Content of the Report}
+
+
+% SUBTITLE (cover page & title page, imprint page; possibly different line breaks)
+\newcommand{\thesisSubtitle}{A Subtitle that can be Very Much Longer if Necessary}
+\newcommand{\thesisImprintSubtitle}{A Subtitle that can be Very Much Longer if Necessary}
+
+
+% PROGRAMME, DEPARTMENT, DIVISION, RESEARCH GROUP AND UNIVERSITY INFO
+\newcommand{\thesisMasterProgramme}{Master Programme Name}  % "Master's thesis in \thesisMasterProgramme"
+
+\newcommand{\thesisDepartment}{Department of Some Subject or Technology}
+\newcommand{\thesisDivision}{Division of Division name}
+\newcommand{\thesisGroup}{Name of research group (if applicable)}
+
+\newcommand{\thesisUniversity}{Chalmers University of Technology}
+\newcommand{\thesisUniversityURL}{www.chalmers.se}
+\newcommand{\thesisCity}{Gothenburg}
+\newcommand{\thesisCountry}{Sweden}
+\newcommand{\thesisLocation}{\thesisCity, \thesisCountry}
+
+
+% MORE IMPRINT PAGE INFO
+\newcommand{\thesisSupervisor}{Name, Company or Department}
+\newcommand{\thesisExaminer}{Name, Department}
+\newcommand{\thesisPrintedBy}{Chalmers Reproservice} % remove this line to remove it on the imprint page
+
+\newcommand{\thesisImprintLocation}{SE-412 96 Gothenburg}
+\newcommand{\thesisUniversityTel}{+46 31 772 1000}
+
+
+% COVER FIGURE
+% Remove the following line to remove the figure
+\newcommand{\thesisCoverFigure}{frontmatter/Wind.png}
+% Caption for cover page figure if used, possibly with reference to further information in the report:
+\newcommand{\thesisCoverFigureCaption}{Wind visualization constructed in Matlab showing a surface of constant wind speed along with streamlines of the flow.}
+
+% LAYOUT
+\newcommand{\thesisLayout}{2} % One-sided (1) or two-sided (2) layout
+\newcommand{\thesisFootnoteStyle}{n} % 'n' for numbers, 's' for symbols
+% if symbols is used, one may need to modify the
+% code in settings/layout.text

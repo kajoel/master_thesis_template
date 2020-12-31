@@ -1,0 +1,40 @@
+% TITLE PAGE
+{ % make parskip changes local
+\newpage
+\thispagestyle{empty}
+\begin{center}
+	\textsc{\large
+	\if\thesisType M
+	    Master's thesis
+	\else
+	    Kandidatarbete
+	\fi
+	\thesisYear
+	}\\[4cm]
+	\textbf{\Large \thesisTitle} \\[1cm]
+	{\large \thesisSubtitle}\\[1cm]
+	{\large \thesisAuthor}
+
+	\vfill
+	% Logotype on titlepage
+	\begin{figure}[H]
+	\centering
+	% Remove this figure to remove the titlepage logotype
+	\if\thesisType M
+    \includegraphics[width=0.2\pdfpagewidth]{template/figures/AvancezChalmersU_black_centered.eps} \\
+    \fi
+    \if\thesisType B
+    \includegraphics[width=0.2\pdfpagewidth]{template/figures/AvancezChalmers_black_centered.eps} \\
+    \fi
+	\end{figure}	\vspace{5mm}
+
+	\thesisDepartment\\
+	\emph{\thesisDivision}\\
+	\ifx\thesisGroup\undefined
+    \else
+    \thesisGroup\\
+    \fi
+	\textsc{\thesisUniversity}\\
+	\thesisLocation\ \thesisYear\\
+\end{center}
+}

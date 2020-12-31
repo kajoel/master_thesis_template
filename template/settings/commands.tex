@@ -1,0 +1,16 @@
+% USER DEFINED COMMANDS:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Really wide (adpative) hat
+%\usepackage{scalerel,stackengine}
+%\stackMath
+%\newcommand*\reallywidehat[1]{\savestack{\tmpbox}{\stretchto{%
+%\scaleto{\scalerel*[\widthof{\ensuremath{#1}}]{\kern.1pt\mathchar"0362\kern.1pt}%
+%{\rule{0ex}{\textheight}}}{\textheight}}{2.4ex}}\stackon[-6.9pt]{#1}{\tmpbox}}
+
+% Scientific notation with round-precision
+%\newcommand*{\numsc}[2]{\num[scientific-notation=true, round-mode=places, round-precision=#2]{#1}}
+
+\renewcommand*{\i}{\mathrm{i}}      % Imaginary unit
+\newcommand*{\e}{\mathrm{e}}        % Euler's number
+\renewcommand*{\d}{\mathrm{d}}      % Differential d

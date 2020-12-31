@@ -1,76 +1,58 @@
-% CREATED BY MAGNUS GUSTAVER, 2020
-% BASED ON THE WORKS BY DAVID FRISK, 2018, WITH UPDATES TO TITLE PAGE AND LAST PAGE
+% TEMPLATE INSTRUCTIONS
+% Fill in the information in template/information.tex
+% The frontmatter (abstract and acknowledgements) needs slight modification for Bachelor theses.
 
 % IMPORT SETTINGS
-\documentclass[12pt,a4paper,twoside,openright]{report}
-\input{include/settings/Settings}
+\documentclass[12pt, a4paper, twoside, openright]{report}
+\input{template/information}
+\input{template/settings/basic}
+\input{template/settings/optional}
+\input{template/settings/commands}
 
 \begin{document}
 
-% If you write a bachelor thesis, change \def\ThesisType{M} to \def\ThesisType{B} in Settings.tex
-
 % COVER PAGE, TITLE PAGE AND IMPRINT PAGE
-\pagenumbering{roman}			% Roman numbering (starting with i (one)) until first main chapter
-\input{include/frontmatter/Titlepage}
+\include{template/pages/cover}
+\setcounter{page}{1}
+\pagenumbering{roman}
+\include{template/pages/title}
+\include{template/pages/imprint}
 
-% ABSTRACT
+% ABSTRACT & ACKNOWLEDGEMENTS
 \newpage
-\input{include/frontmatter/Abstract}
-
-% ACKNOWLEDGEMENTS
+\include{frontmatter/abstract}
 \newpage
-\input{include/frontmatter/Acknowledgements}
-
+\include{frontmatter/acknowledgements}
 
 % TABLE OF CONTENTS
 \newpage
 \tableofcontents
-
-% OTHER FRONTMATTER
-% List of figures (add to table of contents)
-\cleardoublepage
-\addcontentsline{toc}{chapter}{\listfigurename}
-\listoffigures
-% List of tables (add to table of contents)
-\cleardoublepage
-\addcontentsline{toc}{chapter}{\listtablename}
-\listoftables
-
+\cleardoublepage % this is redefed to \clearpage for one-sided layout
 
 % START OF MAIN DOCUMENT
-\cleardoublepage
 \setcounter{page}{1}
-\pagenumbering{arabic}			% Arabic numbering starting from 1 (one)
-\setlength{\parskip}{0pt plus 1pt}
+\pagenumbering{arabic}	% Arabic numbering starting from 1 (one)
 
-% INTRODUCTION
-\input{include/Introduction}
-
-% THEORY
-\input{include/Theory}
-
-% METHODS
-\input{include/Methods}
-
-% RESULTS
-\input{include/Results}
-
-% CONCLUSION
-\input{include/Conclusion}
+% CHAPTERS
+\include{chapters/introduction}
+\include{chapters/theory}
+\include{chapters/methods}
+\include{chapters/results}
+\include{chapters/conclusion}
 
 % REFERENCES / BIBLIOGRAPHY
 \cleardoublepage
-\addcontentsline{toc}{chapter}{Bibliography}
-\input{include/backmatter/References}
+\addcontentsline{toc}{chapter}{\thesisBibName}
+\printbibliography[title = {\thesisBibName}]
 
 % APPENDICES
 \cleardoublepage
 \appendix
-\setcounter{page}{1}
-\pagenumbering{Roman}			% Capitalized roman numbering starting from I (one)
 
-\input{include/backmatter/Appendix_1}
+\include{appendices/first_appendix}
+\include{appendices/second_appendix}
 
-\input{include/backmatter/Lastpage}
+% LAST PAGE
+\include{template/pages/lastpage}
 
 \end{document}
