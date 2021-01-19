@@ -57,36 +57,6 @@
 % labelformat=r-parens, width=0.8\textwidth, position=b}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% REFERENCES
-
-% Clickable links in final pdf
-\usepackage[
-    hidelinks,
-    linktoc     = all,
-    colorlinks  = false, % blue (black) links if true (false)
-    filecolor   = blue,
-    linkcolor   = blue,
-    urlcolor    = blue,
-    citecolor   = blue,
-    anchorcolor = blue,
-]{hyperref}
-\usepackage{url}                    % Clickable url links
-\usepackage[nameinlink]{cleveref}   % Clever references
-% optional: [nameinlink], makes e.g. "Table" part of the link
-
-% CREF
-\crefname{figure}{Figure}{Figures}
-\crefname{equation}{}{}
-\crefname{table}{Table}{Tables}
-\crefname{section}{Section}{Sections}
-\crefname{appendix}{Appendix}{Appendices}
-
-% NUMBERING:
-\numberwithin{equation}{chapter}    % Numbering order for equations
-\numberwithin{figure}{chapter}	    % Numbering order for figures
-\numberwithin{table}{chapter}		% Numbering order for tables
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CITATIONS/BIBLIOGRAPHY
 \usepackage{silence}  % Suppress warnings (manually)
 \WarningFilter{biblatex}{File 'english-ieee.lbx'}
@@ -299,3 +269,35 @@
     \fi
 \fi
 \setlength{\marginparwidth}{2.5cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% REFERENCES
+% hyperref should, in general, be loaded last to avoid problems.
+% Hence, other packages should, most likely, be placed above this.
+
+% Clickable links in final pdf
+\usepackage[
+    hidelinks,
+    linktoc     = all,
+    colorlinks  = false, % blue (black) links if true (false)
+    filecolor   = blue,
+    linkcolor   = blue,
+    urlcolor    = blue,
+    citecolor   = blue,
+    anchorcolor = blue,
+]{hyperref}
+\usepackage{url}                    % Clickable url links
+\usepackage[nameinlink]{cleveref}   % Clever references
+% optional: [nameinlink], makes e.g. "Table" part of the link
+
+% CREF
+\crefname{figure}{Figure}{Figures}
+\crefname{equation}{}{}
+\crefname{table}{Table}{Tables}
+\crefname{section}{Section}{Sections}
+\crefname{appendix}{Appendix}{Appendices}
+
+% NUMBERING:
+\numberwithin{equation}{chapter}    % Numbering order for equations
+\numberwithin{figure}{chapter}	    % Numbering order for figures
+\numberwithin{table}{chapter}		% Numbering order for tables
