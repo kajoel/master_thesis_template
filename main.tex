@@ -1,6 +1,6 @@
 % TEMPLATE INSTRUCTIONS
 % Fill in the information in template/information.tex
-% The frontmatter (abstract and acknowledgements) needs slight modification for Bachelor theses.
+% The front matter (abstract and acknowledgements) needs slight modification for Bachelor theses.
 
 % IMPORT SETTINGS
 \documentclass[12pt, a4paper, twoside, openright]{report}
@@ -9,28 +9,31 @@
 \input{template/settings/optional}
 \input{template/settings/commands}
 
+% CHOOSE SUBSET OF FILES TO COMPILE (USES OLD .aux FILES)
+% Sometimes, this will cause a blank page at the beginning.
+% One way to fix this is to add \cleardoublepage at the end of every
+% included file.
+\if\thesisStatus d % only effective in draft mode
+    % \includeonly{chapters/methods}
+\fi
+
 \begin{document}
 
 % COVER PAGE, TITLE PAGE AND IMPRINT PAGE
+\pagenumbering{alph}
 \include{template/pages/cover}
-\setcounter{page}{1}
 \pagenumbering{roman}
 \include{template/pages/title}
 \include{template/pages/imprint}
 
 % ABSTRACT & ACKNOWLEDGEMENTS
-\newpage
 \include{frontmatter/abstract}
-\newpage
 \include{frontmatter/acknowledgements}
 
 % TABLE OF CONTENTS
-\newpage
-\tableofcontents
-\cleardoublepage % this is redefed to \clearpage for one-sided layout
+\include{template/pages/tableofcontents}
 
-% START OF MAIN DOCUMENT
-\setcounter{page}{1}
+% BEGINNING OF MAIN DOCUMENT
 \pagenumbering{arabic}	% Arabic numbering starting from 1 (one)
 
 % CHAPTERS
@@ -41,14 +44,10 @@
 \include{chapters/conclusion}
 
 % REFERENCES / BIBLIOGRAPHY
-\cleardoublepage
-\addcontentsline{toc}{chapter}{\thesisBibName}
-\printbibliography[title = {\thesisBibName}]
+\include{template/pages/bibliography}
 
 % APPENDICES
-\cleardoublepage
 \appendix
-
 \include{appendices/first_appendix}
 \include{appendices/second_appendix}
 
