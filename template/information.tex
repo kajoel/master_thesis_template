@@ -4,12 +4,17 @@
 \newcommand{\thesisMonth}{\monthname}
 \newcommand{\thesisYear}{\the\year}
 
-% LAYOUT
-\newcommand{\thesisLayout}{2} % One-sided (1) or two-sided (2) layout
-% Note: \cleardoublepage is redefed to \clearpage for one-sided layout
+% Controls e.g. todonotes, front matter, blank pages etc.
+\newcommand{\thesisStatus}{f} % d for draft, f for final
 
-% Controls e.g. todonotes
-\newcommand{\thesisStatus}{d} % d for draft, f for final
+% LAYOUT
+% One-sided (1) or two-sided (2) layout
+% Note: \cleardoublepage is redefed to \clearpage for one-sided layout
+\if\thesisStatus f
+    \newcommand{\thesisLayout}{2}
+\else
+    \newcommand{\thesisLayout}{1}
+\fi
 
 % TITLE (cover page & title page, imprint page; possibly different line breaks)
 \newcommand{\thesisTitle}{An Informative Headline describing \\[0.2cm] the Content of the Report}

@@ -20,11 +20,15 @@
 \begin{document}
 
 % COVER PAGE, TITLE PAGE AND IMPRINT PAGE
-\pagenumbering{alph}
-\include{template/pages/cover}
+\if\thesisStatus f
+    \pagenumbering{alph}
+    \include{template/pages/cover}
+\fi
 \pagenumbering{roman}
 \include{template/pages/title}
-\include{template/pages/imprint}
+\if\thesisStatus f
+    \include{template/pages/imprint}
+\fi
 
 % ABSTRACT & ACKNOWLEDGEMENTS
 \include{frontmatter/abstract}
@@ -52,6 +56,8 @@
 \include{appendices/second_appendix}
 
 % LAST PAGE
-\include{template/pages/lastpage}
+\if\thesisStatus f
+    \include{template/pages/lastpage}
+\fi
 
 \end{document}
