@@ -2,9 +2,12 @@
 { % make parskip changes local
 \if\thesisLayout 2 % place lastpage correctly
     \cleardoublepage
+    \pagenumbering{gobble}
     \newpage
     \thispagestyle{empty}
     \mbox{}
+\else
+    \pagenumbering{gobble}
 \fi
 
 \newpage

@@ -21,7 +21,6 @@
 
 % COVER PAGE, TITLE PAGE AND IMPRINT PAGE
 \if\thesisStatus f
-    \pagenumbering{alph}
     \include{template/pages/cover}
 \fi
 \pagenumbering{roman}
@@ -51,7 +50,9 @@
 \include{template/pages/bibliography}
 
 % APPENDICES
+\cleardoublepage
 \appendix
+\pagenumbering{bychapter}
 \include{appendices/first_appendix}
 \include{appendices/second_appendix}
 
