@@ -276,11 +276,18 @@
 % hyperref should, in general, be loaded last to avoid problems.
 % Hence, other packages should, most likely, be placed above this.
 
+\if\thesisStatus f
+    \newcommand{\thesisColorlinks}{false}
+\else
+    % change to false for black links in draft
+    \newcommand{\thesisColorlinks}{true}
+\fi
+
 % Clickable links in final pdf
 \usepackage[
     hidelinks,
     linktoc     = all,
-    colorlinks  = false, % blue (black) links if true (false)
+    colorlinks  = \thesisColorlinks,
     filecolor   = blue,
     linkcolor   = blue,
     urlcolor    = blue,
@@ -290,6 +297,7 @@
 \usepackage{url}                    % Clickable url links
 \usepackage[nameinlink]{cleveref}   % Clever references
 % optional: [nameinlink], makes e.g. "Table" part of the link
+% Note: use \cpageref to reference pages with correct hyperlinks
 
 % CREF
 \crefname{figure}{Figure}{Figures}
