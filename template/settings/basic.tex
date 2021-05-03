@@ -294,17 +294,13 @@
     citecolor   = blue,
     anchorcolor = blue,
 ]{hyperref}
-\usepackage{url}                    % Clickable url links
-\usepackage[nameinlink]{cleveref}   % Clever references
+\usepackage{url}                                        % Clickable url links
+\usepackage[capitalise,noabbrev,nameinlink]{cleveref}   % Clever references
 % optional: [nameinlink], makes e.g. "Table" part of the link
 % Note: use \cpageref to reference pages with correct hyperlinks
 
 % CREF
-\crefname{figure}{Figure}{Figures}
-\crefname{equation}{}{}
-\crefname{table}{Table}{Tables}
-\crefname{section}{Section}{Sections}
-\crefname{appendix}{Appendix}{Appendices}
+\crefname{equation}{}{}  % "(1.1)" instead of "Equation (1.1)"
 
 % NUMBERING:
 \numberwithin{equation}{chapter}    % Numbering order for equations
