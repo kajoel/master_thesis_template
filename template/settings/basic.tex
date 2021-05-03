@@ -125,38 +125,25 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % FOOTNOTE LAYOUT
-\usepackage[bottom, hang, symbol*]{footmisc}
-% space before footnote text (0pt for marker width):
-\setlength{\footnotemargin}{0pt}
-% Might be preferable for multi-paragraph footnotes:
-%\setlength{\footnotesep}{\baselineskip}
-% Also, handling of \footnote{}\footnote{} can be improved.
+\usepackage[bottom, hang]{footmisc}
+% The multiple option does not seem to work. It should produce commas
+% between markers in cases like "Lipsum\footnote{Foo}\footnote{Bar}".
+% For now, use the following:
+\newcommand{\footnotemarksep}{\textsuperscript{,}}
+% A better approach might be: https://tex.stackexchange.com/a/62091
 
-% Change the width of the ruler above footnotes
+% Change the width of the ruler above footnotes:
 \renewcommand*\footnoterule{\rule[2pt]{\textwidth}{0.5pt}}
 
-% footnote symbols or numbers
-\newcommand{\thesisFootnoteStyle}{n} % 'n' for numbers, 's' for symbols
+% Space before footnote text (0pt for marker width):
+\setlength{\footnotemargin}{0pt}
 
-\if\thesisFootnoteStyle n
-    \renewcommand{\thefootnote}{\arabic{footnote}}
-\fi
+% Might be preferable for multi-paragraph footnotes:
+%\setlength{\footnotesep}{\baselineskip}
 
-\if\thesisFootnoteStyle s
-    \renewcommand{\thefootnote}{\fnsymbol{footnote}}    % symbols
-    \setfnsymbol{wiley}
-
-    % Footnote ordering restarts every page
-    \usepackage{perpage}
-    \MakePerPage{footnote}
-    \setcounter{footnote}{0}
-
-    % Remove counter "footnote" from the reset counter list
-    % of counter "chapter".
-    \makeatletter
-    \@removefromreset{footnote}{chapter}
-    \makeatother
-\fi
+% For footnote symbols instead of numbers, use options symbol*
+% and perpage with footmisc.
+% To change symbol set, use e.g.: \setfnsymbol{wiley}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % BLANK LINE AND SPACING
