@@ -39,15 +39,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CAPTION LAYOUT
-\usepackage{caption}
-\captionsetup{
+\usepackage[
     labelfont       = bf,
-    font            = footnotesize,
-    textfont        = normal,
-    width           = .95\linewidth,
+    font            = normalsize,
+    width           = 0.92\textwidth,
     justification   = justified,
     singlelinecheck = true
-}
+]{caption}
+% NOTE: Consider matching the caption font size (normalsize above)
+% to the font size in the figure/table. \captionsetup can be used
+% to change settings locally.
 
 % Caption for subfigures (optional)
 % \usepackage{subcaption}
