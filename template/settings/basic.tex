@@ -1,6 +1,6 @@
 % BASIC SETTINGS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\usepackage[english]{babel}			% Language settings
+\usepackage[UKenglish]{babel}		% Language settings
 \usepackage[utf8]{inputenc}			% Input settings
 \usepackage[T1]{fontenc}			% Output settings
 \usepackage{lmodern}				% Latin modern font
@@ -28,8 +28,11 @@
 % TABLES
 \usepackage{array}                  % (TODO)
 \usepackage{tabularx}               % (TODO)
-\usepackage{hhline}                 % Double horizontal lines in table
 \usepackage{diagbox}                % Slash in tables
+\usepackage{booktabs}               % Improved rules in tables
+
+% Reduce weight of top and bottom rules
+\setlength{\heavyrulewidth}{0.075em}
 
 % TABLE LAYOUT (optional)
 %\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}

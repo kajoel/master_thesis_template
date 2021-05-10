@@ -4,58 +4,62 @@ In the following sections, examples of a figure, an equation, a table, a chemica
 
 \section{Figure}
 \begin{figure}[H]
-\centering
-\includegraphics[width=0.45\linewidth, trim=3cm 11cm 3cm 11cm]{chapters/theory/X.pdf}
-\includegraphics[width=0.45\linewidth, trim=3cm 11cm 3cm 11cm]{chapters/theory/Y.pdf}
-\caption{Surface and contour plots showing the two dimensional function $z(x,y)=\sin(x+y)\cos(2x)$.}
+    \centering
+    \includegraphics[width=0.45\linewidth, trim=3cm 11cm 3cm 11cm]{chapters/theory/X.pdf}
+    \includegraphics[width=0.45\linewidth, trim=3cm 11cm 3cm 11cm]{chapters/theory/Y.pdf}
+    \caption{Surface and contour plots showing the two dimensional function $z(x,y)=\sin(x+y)\cos(2x)$.}
 \end{figure}
 
 \section{Equation}
 \begin{equation}
-f(t)=\left\{ \begin{array}{ll}
-1,~~~~ & t< 1 \\
-t^2 & t\geq 1
+    f(t)=\left\{ \begin{array}{ll}
+    1,~~~~ & t< 1 \\
+    t^2 & t\geq 1
 \end{array}\right.
 \end{equation}
 
 \section{Table}
 \begin{table}[H]
-\centering
-\caption{Values of $f(t)$ for $t=0,1,\dots 5$.}
-\begin{tabular}{l|llllll} \hline\hline
-$t$ & 0 & 1 & 2 & 3 & 4 & 5 \\ \hline
-$f(t)$ & 1 & 1 & 4 & 9 & 16 & 25 \\ \hline\hline
-\end{tabular}
+    \centering
+    \caption{Values of $f(t)$ for $t=0,1,\dots 5$.}
+    \begin{tabular}{lllllll}
+        \toprule
+        $t$ & 0 & 1 & 2 & 3 & 4 & 5 \\ \midrule
+        $f(t)$ & 1 & 1 & 4 & 9 & 16 & 25 \\ \bottomrule
+    \end{tabular}
 \end{table}
 
 \section{Chemical structure}
 \begin{center}
-\chemfig{X*5(-E-T-A-L-)}
+    \chemfig{X*5(-E-T-A-L-)}
 \end{center}
 
 \section{List}
 \begin{enumerate}
-  \item The first item
-  \begin{enumerate}
-    \item Nested item 1
-    \item Nested item 2
-  \end{enumerate}
-  \item The second item
-  \item The third item
-  \item \dots
+    \item The first item
+    \begin{enumerate}
+        \item Nested item 1
+        \item Nested item 2
+    \end{enumerate}
+    \item The second item
+    \item The third item
+    \item \dots
 \end{enumerate}
 
 \section{Source code listing}
-%\lstset{language=Matlab}
+An example of a source code listing.
+The output can be drastically improved with the optional settings.
+\lstset{language=Matlab}
 \begin{lstlisting}[frame=single]
 % Generate x- and y-nodes
-x=linspace(0,1); y=linspace(0,1);
+x = linspace(0, 1);
+y = linspace(0, 1);
 
-% Calculate z=f(x,y)
-for i=1:length(x)
- for j=1:length(y)
-  z(i,j)=x(i)+2*y(j);
- end
+% Calculate z = f(x, y)
+for i = 1:length(x)
+    for j = 1:length(y)
+        z(i, j) = x(i) + 2*y(j);
+    end
 end
 \end{lstlisting}
 
