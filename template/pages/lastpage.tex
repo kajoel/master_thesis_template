@@ -1,5 +1,5 @@
 % LAST PAGE
-{ % make parskip changes local
+\begingroup % make parskip changes local
 \if\thesisLayout 2 % place lastpage correctly
     \cleardoublepage
     \pagenumbering{gobble}
@@ -38,4 +38,4 @@
 \textbf{\MakeUppercase{\thesisUniversity}} \\
 \thesisLocation \\
 \href{\thesisUniversityURL}{\textcolor{white}{\thesisUniversityURL}}}
-}
+\endgroup

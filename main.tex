@@ -5,8 +5,7 @@
 % IMPORT SETTINGS
 \documentclass[12pt, a4paper, twoside, openright]{report}
 \input{template/information}
-\input{template/settings/basic}
-\input{template/settings/optional}
+\input{template/settings/packages}
 \input{template/settings/commands}
 
 % CHOOSE SUBSET OF FILES TO COMPILE (USES OLD .aux FILES)
@@ -33,8 +32,8 @@
 \include{frontmatter/abstract}
 \include{frontmatter/acknowledgements}
 
-% TABLE OF CONTENTS
-\include{template/pages/tableofcontents}
+% CONTENTS LIST (TABLE OF CONTENTS, FIGURES, TABLES)
+\include{template/pages/contents}
 
 % BEGINNING OF MAIN DOCUMENT
 \pagenumbering{arabic}	% Arabic numbering starting from 1 (one)

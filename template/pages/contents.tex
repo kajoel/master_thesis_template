@@ -1,0 +1,18 @@
+% Use a separate file to be able to exclude with \includeonly.
+\tableofcontents
+
+% List of figures (add to table of contents)
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+% List of tables (add to table of contents)
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+% The page numbering is changed after this, whence we need a \cleardoublepage.
+% We put it here to be able to exclude it with \includeonly.
+\cleardoublepage

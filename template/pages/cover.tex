@@ -1,5 +1,5 @@
 % COVER PAGE
-{ % make parskip changes local
+\begingroup % make parskip changes local
 \ifx\thesisType\undefined
 Undefined Thesis type in settings.tex
 \else
@@ -61,7 +61,7 @@ Undefined Thesis type in settings.tex
 \mbox{}
 \vfill
 \renewcommand{\familydefault}{\sfdefault} \normalfont % Set cover page font
-\textbf{{\Huge 	\thesisTitle}} 	\\[0.5cm]
+\textbf{{\Huge \thesisTitle}} 	\\[0.5cm]
 {\Large \thesisSubtitle}\\[0.4cm]
 \if\thesisType M
     Master's thesis in
@@ -96,4 +96,4 @@ Undefined Thesis type in settings.tex
 \thispagestyle{empty}
 \mbox{}
 \fi
-}
+\endgroup

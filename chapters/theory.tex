@@ -1,6 +1,7 @@
 \chapter{Theory}
 
 In the following sections, examples of a figure, an equation, a table, a chemical structure, a list, a listing and a to-do note are shown.
+These examples are not particularly well-made\dots
 
 \section{Figure}
 \begin{figure}[H]
@@ -12,16 +13,17 @@ In the following sections, examples of a figure, an equation, a table, a chemica
 
 \section{Equation}
 \begin{equation}
-    f(t)=\left\{ \begin{array}{ll}
-    1,~~~~ & t< 1 \\
-    t^2 & t\geq 1
-\end{array}\right.
+    f(t)=\left\{%
+    \begin{array}{ll}
+        1,\qquad & t< 1 \\
+        t^2 & t\geq 1
+    \end{array}\right.
 \end{equation}
 
 \section{Table}
 \begin{table}[H]
     \centering
-    \caption{Values of $f(t)$ for $t=0,1,\dots 5$.}
+    \caption[This (instead of the potentially long caption) appears in the list of tables.]{Values of $f(t)$ for $t=0,1,\dots 5$.}
     \begin{tabular}{lllllll}
         \toprule
         $t$ & 0 & 1 & 2 & 3 & 4 & 5 \\ \midrule

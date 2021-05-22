@@ -2,23 +2,27 @@
 This chapter presents the section levels that can be used in the template.
 
 \section{Section levels}
-The following table presents an overview of the section levels that are used in this document. The number of levels that are numbered and included in the table of contents is set in the settings file \texttt{Settings.tex}. The levels are shown in \cref{sec:introduction_section}\footnote{
+The following table presents an overview of the section levels that are used in this document. The number of levels that are numbered and included in the table of contents is set in the settings file \texttt{Settings.tex}. The levels are shown in \cref{sec:introduction_section}%
+\footnote{
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placeratac, adipiscing vitae, felis. Curabitur dictum gravida mauris.}%
 \footnotemarksep%
 \footnote{Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut purus elit, vestibulum ut, placeratac, adipiscing vitae, felis. Curabitur dictum gravida mauris.}%
 .
 
 \begin{table}[H]
-\centering
-\begin{tabular}{ll} \hline\hline
-Name & Command\\ \hline
-Chapter & \textbackslash\texttt{chapter\{\emph{Chapter name}\}}\\
-Section & \textbackslash\texttt{section\{\emph{Section name}\}}\\
-Subsection & \textbackslash\texttt{subsection\{\emph{Subsection name}\}}\\
-Subsubsection & \textbackslash\texttt{subsubsection\{\emph{Subsubsection name}\}}\\
-Paragraph & \textbackslash\texttt{paragraph\{\emph{Paragraph name}\}}\\
-Subparagraph & \textbackslash\texttt{paragraph\{\emph{Subparagraph name}\}}\\ \hline\hline
-\end{tabular}
+    \centering
+    % NOTE: real tables should have a caption
+    \begin{tabular}{ll}
+    \toprule
+    Name & Command\\ \midrule
+    Chapter & \textbackslash\texttt{chapter\{\emph{Chapter name}\}}\\
+    Section & \textbackslash\texttt{section\{\emph{Section name}\}}\\
+    Subsection & \textbackslash\texttt{subsection\{\emph{Subsection name}\}}\\
+    Subsubsection & \textbackslash\texttt{subsubsection\{\emph{Subsubsection name}\}}\\
+    Paragraph & \textbackslash\texttt{paragraph\{\emph{Paragraph name}\}}\\
+    Subparagraph & \textbackslash\texttt{paragraph\{\emph{Subparagraph name}\}}\\
+    \bottomrule
+    \end{tabular}
 \end{table}
 
 %\footnote{\lipsum[2]}.
