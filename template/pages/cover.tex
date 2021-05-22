@@ -16,7 +16,7 @@ Undefined Thesis type in settings.tex
 \pagenumbering{gobble}
 \begin{titlepage}
 \newgeometry{top=3cm, bottom=1cm,
-			left=2.25 cm, right=2.25cm}	% Temporarily change margins
+             left=2.25 cm, right=2.25cm}    % Temporarily change margins
 
 %Header Front Page
 \ifx\thesisType\undefined
@@ -52,7 +52,7 @@ Undefined Thesis type in settings.tex
 \else
     \begin{figure}[H]
     \centering
-    \vspace{1cm}	% Adjust vertical spacing here
+    \vspace{1cm}    % Adjust vertical spacing here
     \includegraphics[width=0.9\linewidth]{\thesisCoverFigure}
     \end{figure}
 \fi
@@ -61,7 +61,7 @@ Undefined Thesis type in settings.tex
 \mbox{}
 \vfill
 \renewcommand{\familydefault}{\sfdefault} \normalfont % Set cover page font
-\textbf{{\Huge \thesisTitle}} 	\\[0.5cm]
+\textbf{{\Huge \thesisTitle}}   \\[0.5cm]
 {\Large \thesisSubtitle}\\[0.4cm]
 \if\thesisType M
     Master's thesis in
