@@ -1,19 +1,16 @@
 % LAST PAGE
-\begingroup % make parskip changes local
-\if\thesisLayout 2 % place lastpage correctly
-    \cleardoublepage
-    \pagenumbering{gobble}
-    \newpage
-    \thispagestyle{empty}
-    \mbox{}
-\else
-    \pagenumbering{gobble}
-\fi
+\begingroup % make parskip changes etc. local
 
-\newpage
+\cleardoublepage
+\pagenumbering{gobble}
 \thispagestyle{empty}
 
-%Header Last Page
+\if\thesisLayout 2 % extra blank page in two-sided layout
+    \leavevmode\newpage
+    \thispagestyle{empty}
+\fi
+
+% Header Last Page
 \vtop{
     \null\vspace{-27.5mm}
     \centerline{\textcolor{thesisHeaderColor}{\rule{1.28\textwidth}{28mm}}}
@@ -31,11 +28,11 @@
 
 %\addtolength{\voffset}{2cm}
 \renewcommand{\familydefault}{\sfdefault} \normalfont % Set cover page font
-\pagestyle{empty}
 \vspace*{-4.5cm}
 \noindent
 \textcolor{white}{\footnotesize \textbf{\MakeUppercase{\thesisDepartment}}\\
 \textbf{\MakeUppercase{\thesisUniversity}} \\
 \thesisLocation \\
 \href{\thesisUniversityURL}{\textcolor{white}{\thesisUniversityURL}}}
+
 \endgroup
