@@ -196,7 +196,9 @@
 % A better approach might be: https://tex.stackexchange.com/a/62091
 
 % Change the width of the ruler above footnotes:
-\renewcommand*\footnoterule{\rule[2pt]{\textwidth}{0.5pt}}
+\makeatletter
+\renewcommand*{\footnoterule}{\kern-3\p@ \hrule \kern2.6\p@}
+\makeatother
 
 % Space before footnote text (0pt for marker width):
 \setlength{\footnotemargin}{0pt}
