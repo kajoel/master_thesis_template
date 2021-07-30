@@ -165,8 +165,10 @@
 \usepackage{chappg}
 
 \pagestyle{fancy}
-\setlength{\headheight}{15pt}  % Suppress warning
-\renewcommand{\chaptermark}[1]{\markboth{\thechapter.\space#1}{}}
+\setlength{\headheight}{15pt}  % Increase head height
+
+\renewcommand{\chaptermark}[1]{\markboth{\thechapter. \space#1}{\thechapter. \space#1}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection. \space#1}}
 
 \if\thesisLayout 1 % One-sided
     \fancyhf{}
