@@ -63,19 +63,24 @@ Undefined Thesis type in settings.tex
 \renewcommand{\familydefault}{\sfdefault} \normalfont % Set cover page font
 \textbf{{\Huge \thesisTitle}}   \\[0.5cm]
 {\Large \thesisSubtitle}\\[0.4cm]
+{\large
 \if\thesisType M
     Master's thesis in
 \else
     Kandidatarbete i
 \fi
-\thesisMasterProgramme \setlength{\parskip}{1cm}
+\thesisMasterProgramme
+}
+\setlength{\parskip}{1cm}
 
 
 \noindent
 {\Large \MakeUppercase{\thesisAuthor}}
 \setlength{\parskip}{1.5cm} % NOTE: 1cm (1.5cm) with (without) division (below department)
 \ifx\thesisCoverFigure\undefined
-    \vspace{6cm}  % increase space if there is no figure
+    \vspace{5.5cm}  % increase space if there is no figure
+    % NOTE: this might need individual tuning depending on how many lines the
+    % title and subtitle are.
 \fi
 
 \noindent
